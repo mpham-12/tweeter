@@ -5,7 +5,8 @@ header{
   align-items: center;
   height: 400px;
   width: 100%;
-  background-color: rgb(209, 161, 29);
+  background-color: rgb(209, 128, 74);
+  background-image: url('../images/brick-wall-dark.png')
 }
 .avatar{
 
