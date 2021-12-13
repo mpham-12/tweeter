@@ -1,0 +1,26 @@
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 120px;
+	width: 100%;
+	background-color: #4056a1;
+	color: #ffffff;
+	padding: 0px 1.5em;
+}
+
+#logo {
+	font-family: 'Bungee';
+  font-size: 35px;
+}
+
+#nav-right{
+  font-size: 18px;
+}
+
+.fa-angle-double-down {
+	display: flex;
+	justify-content: center;
+  color: rgb(184, 3, 3);
+
+}
