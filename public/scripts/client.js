@@ -68,6 +68,29 @@ const renderTweets = function(tweets) {
   }
 };
 
-$(document).ready(() => {
+
+$(document).ready(function() {
+  //catch submit form
+  $('.tweet-form').on('submit', function(event) {
+    //prevent form submission
+    event.preventDefault();
+    //extract tweet value
+    const tweetBox = $(this).children('#tweet-text');
+    const input = tweetBox.val();
+    
+    //create API request using AJAX
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: {text: input}
+    })
+      .done((results) => {
+        console.log(results);
+      })
+      .fail((error) => console.log(error))
+      .always(() => console.log('request to server done'))
+  })
+
+
   renderTweets(data);
 })
