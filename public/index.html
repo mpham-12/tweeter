@@ -11,8 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css">
@@ -21,6 +19,8 @@
     <link rel="stylesheet" href="/styles/posted-tweet.css">
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -60,28 +60,32 @@
           </div>
         </form>
       </section>
-      
-      <article class="posted-tweets">
-        <header class="tweet-header">
-          <div class="img-name">
-            <img class="profile-pic" src="https://i.imgur.com/73hZDYK.png" alt="">
-            <p class='header-name'>Martin Pham</p>
-          </div>
-          <p class='user-handle'>@martinpham</p>
-        </header>
-        <div class='tweet-body'>
-          <p>coding is great</p>
-        </div>
-        <footer class='tweet-footer'>
-          <p>10 days ago</p>
-          <span class="icons">
-            <i class="fas fa-flag icon"></i>
-            <i class="fas fa-retweet icon"></i>
-            <i class="fas fa-heart icon"></i>
-          </span>
-        </footer>
 
-      </article>
+      <section class='tweet-container'>
+        <article class="posted-tweets">
+          <header class="tweet-header">
+            <div class="img-name">
+              <img class="profile-pic" src="https://i.imgur.com/73hZDYK.png" alt="">
+              <p class='header-name'>Martin Pham</p>
+            </div>
+            <p class='user-handle'>@martinpham</p>
+          </header>
+          <div class='tweet-body'>
+            <p>coding is great</p>
+          </div>
+          <footer class='tweet-footer'>
+            <p>10 days ago</p>
+            <span class="icons">
+              <i class="fas fa-flag icon"></i>
+              <i class="fas fa-retweet icon"></i>
+              <i class="fas fa-heart icon"></i>
+            </span>
+          </footer>
+  
+        </article>
+      </section>
+
+      
 
     </main>
 
