@@ -4,32 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+//tweetsObj
+const data = [];
 
+//helper functions to DRY up code
 const createTweetElement = (tweetData) => {
   const $tweet = $("<article>").addClass('tweet');
   let name = tweetData.user.name;
@@ -68,7 +46,7 @@ const renderTweets = function(tweets) {
   }
 };
 
-
+// ensure page runs HTML before JS
 $(document).ready(function() {
   //catch submit form
   $('.tweet-form').on('submit', function(event) {
@@ -77,20 +55,45 @@ $(document).ready(function() {
     //extract tweet value
     const tweetBox = $(this).children('#tweet-text');
     const input = tweetBox.val();
-    
-    //create API request using AJAX
+    const submitBtn = $(this).children('.button-counter').children('.tweet-button');
+
+
+
+    //validation
+    if (!input) {
+      $(submitBtn).prop('disabled', true);
+      alert("Tweet cannot be empty!");
+    }
+    if (input.length > 140) {
+      $(submitBtn).prop('disabled', true);
+      alert("Tweet cannot exceed 140 characters!");
+    } else {
+      //create API request using AJAX
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: { text: input }
+      })
+        .done((results) => {
+          console.log(results);
+        })
+        .fail((error) => console.log(error))
+        .always(() => console.log('request to server done'));
+    }
+  });
+
+  const loadedtweets = function() {
     $.ajax({
       url: '/tweets',
-      method: 'POST',
-      data: {text: input}
+      method: 'GET'
     })
       .done((results) => {
-        console.log(results);
+        renderTweets(results);
       })
       .fail((error) => console.log(error))
-      .always(() => console.log('request to server done'))
-  })
+      .always(() => console.log('request to server done'));
+  }
 
 
-  renderTweets(data);
+  loadedtweets(data);
 })
