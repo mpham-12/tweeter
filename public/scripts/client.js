@@ -54,9 +54,11 @@ const escape = function(str) {
 
 // ensure page runs HTML before JS
 $(document).ready(function() {
+  $('.error-msg').hide();
   //catch submit form
   $('.tweet-form').on('submit', function(event) {
     //prevent form submission
+
     event.preventDefault();
     //extract tweet value
     const tweetBox = $(this).children('#tweet-text');
@@ -68,11 +70,15 @@ $(document).ready(function() {
     //validation
     if (!input) {
       $(submitBtn).prop('disabled', true);
-      alert("Tweet cannot be empty!");
+      $('#error1').show(() => {
+        $('#error1').slideDown(1000)
+      });
     }
     if (input.length > 140) {
       $(submitBtn).prop('disabled', true);
-      alert("Tweet cannot exceed 140 characters!");
+      $('#error2').show(() => {
+        $('#error2').slideDown(1000)
+      });
     } else {
       //create API request using AJAX
       $.ajax({

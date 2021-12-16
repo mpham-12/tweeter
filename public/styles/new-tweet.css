@@ -18,6 +18,16 @@ form {
   font-weight: 600;
   height: 2em;
 }
+.error-msg{
+	display: inline;
+	margin: 0px 0px 0px 150px;
+	padding: 5px 10px;
+	font-size: 18px;
+	color: red;
+	background-color: rgb(245, 147, 147);
+	border-radius: 5px;
+	box-shadow: 2px 2px 0px 0px red;
+}
 .button-counter {
 	display: flex;
 	justify-content: space-between;
