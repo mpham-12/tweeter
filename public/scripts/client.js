@@ -24,7 +24,7 @@ const createTweetElement = (tweetData) => {
             <p class='user-handle'>${handle}</p>
           </header>
           <div class='tweet-body'>
-            <p>${text}</p>
+            <p>${escape(text)}</p>
           </div>
           <footer class='tweet-footer'>
             <p>${time}</p>
@@ -44,6 +44,12 @@ const renderTweets = function(tweets) {
     const postTweet = createTweetElement(tweet);
     $('.tweet-container').prepend(postTweet);
   }
+};
+
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
 
 // ensure page runs HTML before JS
@@ -75,7 +81,7 @@ $(document).ready(function() {
         data: { text: input }
       })
         .done((results) => {
-          console.log(results);
+          loadedtweets();
         })
         .fail((error) => console.log(error))
         .always(() => console.log('request to server done'));
@@ -89,11 +95,10 @@ $(document).ready(function() {
     })
       .done((results) => {
         renderTweets(results);
+
       })
       .fail((error) => console.log(error))
       .always(() => console.log('request to server done'));
   }
 
-
-  loadedtweets(data);
 })
