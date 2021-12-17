@@ -9,31 +9,32 @@ const data = [];
 
 //Helper Functions:
 const createTweetElement = (tweetData) => {
-  const $tweet = $("<article>").addClass('tweet');
+  const $tweet = $('<article>').addClass('tweet');
   let name = tweetData.user.name;
   let avatar = tweetData.user.avatars;
   let handle = tweetData.user.handle;
   let text = tweetData.content.text;
   let time = timeago.format(tweetData.created_at);
 
-  let tweetHTML = `<header class="tweet-header">
-            <div class="img-name">
-              <img class="profile-pic" src=${avatar} alt="">
-              <p class='header-name'>${name}</p>
-            </div>
-            <p class='user-handle'>${handle}</p>
-          </header>
-          <div class='tweet-body'>
-            <p>${escape(text)}</p>
-          </div>
-          <footer class='tweet-footer'>
-            <p>${time}</p>
-            <span class="icons">
-              <i class="fas fa-flag icon"></i>
-              <i class="fas fa-retweet icon"></i>
-              <i class="fas fa-heart icon"></i>
-            </span>
-          </footer>`;
+  let tweetHTML = `
+  <header class='tweet-header'>
+    <div class='img-name'>
+      <img class='profile-pic' src=${avatar} alt=''>
+      <p class='header-name'>${name}</p>
+    </div>
+      <p class='user-handle'>${handle}</p>
+  </header>
+  <div class='tweet-body'>
+    <p>${escape(text)}</p>
+  </div>
+  <footer class='tweet-footer'>
+    <p>${time}</p>
+     <span class='icons'>
+       <i class='fas fa-flag icon'></i>
+       <i class='fas fa-retweet icon'></i>
+       <i class='fas fa-heart icon'></i>
+      </span>
+  </footer>`;
 
   let newTweet = $tweet.append(tweetHTML);
   return newTweet;
@@ -47,25 +48,24 @@ const renderTweets = function(tweets) {
 };
 
 const escape = function(str) {
-  let div = document.createElement("div");
+  let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
 // ensure page runs HTML before JS
 $(document).ready(function() {
+  //hide HTML error messages upon loading page
   $('.error-msg').hide();
   //catch submit form
   $('.tweet-form').on('submit', function(event) {
     //prevent form submission
-
     event.preventDefault();
-    //extract tweet value
+    //extract tweet value/buttons/counter
     const tweetBox = $(this).children('#tweet-text');
     const input = tweetBox.val();
     const submitBtn = $(this).children('.button-counter').children('.tweet-button');
     const counter = $(this).children('.button-counter').children('.counter');
-
 
     //validation
     if (!input) {

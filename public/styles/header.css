@@ -15,13 +15,15 @@
 	color: white;
 }
 
-.writeNewTweet{
-  display: flex;
+.writeNewTweet {
+	display: flex;
 }
 
+
+/* media queries */
 @media (min-width: 768px) {
 	.homepage-header {
-    position: fixed;
+		position: fixed;
 		margin: 150px 50px;
 		padding-top: 0px;
 		height: 400px;

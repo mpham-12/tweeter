@@ -24,10 +24,10 @@ form {
 	margin: 0px 0px 0px 0px;
 	padding: 5px 10px;
 	font-size: 15px;
-	color: red;
-	background-color: rgb(245, 147, 147);
+	color: rgb(153, 6, 6);
+	background-color: rgb(243, 179, 179);
 	border-radius: 5px;
-	box-shadow: 2px 2px 0px 0px red;
+	box-shadow: 2px 2px 0px 0px rgb(241, 84, 84);
 }
 .button-counter {
 	display: flex;
