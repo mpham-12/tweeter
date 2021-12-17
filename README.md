@@ -19,9 +19,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of "]()
-!["Screenshot of "]()
-!["Screenshot of "]()
-!["Screenshot of "]()
-!["Screenshot of "]()
-!["Screenshot of "]()
+!["Screenshot of mobile app"](https://github.com/mpham-12/tweeter/blob/master/docs/mobile.png)
+!["Screenshot of desktop app"](https://github.com/mpham-12/tweeter/blob/master/docs/desktop.png)
