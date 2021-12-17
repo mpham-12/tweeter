@@ -1,15 +1,18 @@
-.tweet-container{
+.tweet-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 }
-.tweet{
+.container {
+	margin-top: 20px;
+}
+.tweet {
 	margin: 0 auto;
 	border: 3px solid #545149;
 	width: 90%;
-	margin: 30px 0px;
+	margin: 15px 0px;
 }
 .posted-tweets {
 	border: 3px solid #545149;
@@ -78,4 +81,13 @@
 	color: rgb(131, 131, 247);
 	font-size: 20px;
 	font-weight: 600;
+}
+
+@media (min-width: 768px) {
+	.container {
+		padding: 0px;
+		margin-top: 150px;
+		margin-right: 50px;
+		width: 50%;
+	}
 }

@@ -7,7 +7,7 @@
 //tweetsObj
 const data = [];
 
-//helper functions to DRY up code
+//Helper Functions:
 const createTweetElement = (tweetData) => {
   const $tweet = $("<article>").addClass('tweet');
   let name = tweetData.user.name;
@@ -64,7 +64,7 @@ $(document).ready(function() {
     const tweetBox = $(this).children('#tweet-text');
     const input = tweetBox.val();
     const submitBtn = $(this).children('.button-counter').children('.tweet-button');
-
+    const counter = $(this).children('.button-counter').children('.counter');
 
 
     //validation
@@ -88,23 +88,26 @@ $(document).ready(function() {
       })
         .done((results) => {
           loadedtweets();
+          $(tweetBox).val('');
+          $(counter).val('140');
         })
         .fail((error) => console.log(error))
         .always(() => console.log('request to server done'));
     }
   });
 
+  //displays previous tweets
   const loadedtweets = function() {
     $.ajax({
       url: '/tweets',
       method: 'GET'
     })
       .done((results) => {
+        $('.tweet-container').empty();
         renderTweets(results);
-
       })
       .fail((error) => console.log(error))
       .always(() => console.log('request to server done'));
   }
-
+  loadedtweets();
 })

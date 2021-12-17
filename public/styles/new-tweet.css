@@ -14,15 +14,16 @@ form {
 	border: transparent;
 	background-color: transparent;
 	border-bottom: 5px solid #545149;
-  font-size: 20px;
-  font-weight: 600;
-  height: 2em;
+	font-size: 20px;
+	font-weight: 600;
+	height: 4em;
+	color: #545149;
 }
-.error-msg{
+.error-msg {
 	display: inline;
-	margin: 0px 0px 0px 150px;
+	margin: 0px 0px 0px 0px;
 	padding: 5px 10px;
-	font-size: 18px;
+	font-size: 15px;
 	color: red;
 	background-color: rgb(245, 147, 147);
 	border-radius: 5px;
@@ -31,7 +32,8 @@ form {
 .button-counter {
 	display: flex;
 	justify-content: space-between;
-  padding-top: 10px;
+	padding-top: 10px;
+	margin-bottom: 10px;
 }
 
 .tweet-button {

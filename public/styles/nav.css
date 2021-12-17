@@ -4,28 +4,34 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 120px;
+	height: 100px;
 	width: 100%;
 	background-color: #4056a1;
 	color: #ffffff;
-	padding: 0px 1.5em;
+	padding: 0px 1em;
 }
 
 #logo {
 	font-family: 'Bungee';
-  font-size: 35px;
+	font-size: 35px;
+	margin-right: 15px;
 }
 
-#nav-right{
-  font-size: 18px;
+#nav-right {
+	font-size: 18px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-left: 15px;
+
 }
 
 .fa-angle-double-down {
 	display: flex;
 	justify-content: center;
-  color: rgb(184, 3, 3);
-margin-top: 3px;
+	color: rgb(184, 3, 3);
+	margin-top: 3px;
+}
+.tweet-form{
+	margin-top: 10px;
 }
