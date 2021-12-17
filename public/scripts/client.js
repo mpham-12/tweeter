@@ -71,13 +71,13 @@ $(document).ready(function() {
     if (!input) {
       $(submitBtn).prop('disabled', true);
       $('#error1').show(() => {
-        $('#error1').slideDown(1000)
+        $('#error1').slideDown(1000);
       });
     }
     if (input.length > 140) {
       $(submitBtn).prop('disabled', true);
       $('#error2').show(() => {
-        $('#error2').slideDown(1000)
+        $('#error2').slideDown(1000);
       });
     } else {
       //create API request using AJAX
