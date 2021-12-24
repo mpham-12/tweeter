@@ -69,16 +69,26 @@ $(document).ready(function() {
 
     //validation
     if (!input) {
-      $(submitBtn).prop('disabled', true);
       $('#error1').show(() => {
         $('#error1').slideDown(1000);
       });
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+      })
+        .done((results) => { })
+        .fail();
     }
     if (input.length > 140) {
-      $(submitBtn).prop('disabled', true);
       $('#error2').show(() => {
         $('#error2').slideDown(1000);
       });
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+      })
+        .done((results) => { })
+        .fail();
     } else {
       //create API request using AJAX
       $.ajax({
@@ -90,6 +100,7 @@ $(document).ready(function() {
           loadedtweets();
           $(tweetBox).val('');
           $(counter).val('140');
+          $('.error-msg').hide();
         })
         .fail((error) => console.log(error))
         .always(() => console.log('request to server done'));
